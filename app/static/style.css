@@ -1,0 +1,127 @@
+/* Basic reset so browsers don't add weird default spacing */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f4f5f7;
+  color: #1a1a1a;
+  line-height: 1.5;
+}
+
+.container { max-width: 1000px; margin: 0 auto; padding: 24px; }
+
+/* --- Navbar --- */
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 14px 24px;
+  background: #1a1a2e;
+}
+.navbar a { color: white; text-decoration: none; }
+.navbar a:hover { text-decoration: underline; }
+.brand { font-weight: bold; font-size: 18px; }
+.nav-user { color: #aaa; margin-left: auto; }
+
+/* --- Forms --- */
+form.card {
+  background: white;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  max-width: 420px;
+  margin-bottom: 24px;
+}
+label { display: block; margin-top: 10px; font-size: 13px; font-weight: 600; color: #444; }
+input, select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+button {
+  margin-top: 14px;
+  background: #2c8fbf;
+  color: white;
+  border: none;
+  padding: 9px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+button:hover { background: #23718f; }
+.button-danger { background: #c0392b; }
+.button-danger:hover { background: #962d22; }
+.button-link {
+  display: inline-block;
+  background: #2c8fbf;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-top: 8px;
+}
+
+/* --- Error / hint text --- */
+.error { color: #c0392b; margin-bottom: 12px; }
+.hint { color: #666; font-size: 13px; margin-bottom: 8px; }
+
+/* --- Project list --- */
+.project-list { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+.project-card {
+  display: block;
+  background: white;
+  padding: 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  width: 220px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.project-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-top: 8px;
+  text-transform: uppercase;
+}
+.badge-admin { background: #ffe4b5; color: #8a5a00; }
+.badge-member { background: #d6eaf8; color: #1a5276; }
+
+/* --- Kanban board --- */
+.board-header { margin-bottom: 20px; }
+.board { display: flex; gap: 16px; margin-top: 20px; }
+.column {
+  flex: 1;
+  background: #e9ebee;
+  border-radius: 10px;
+  padding: 12px;
+  min-height: 200px;
+}
+.column h3 { margin-bottom: 10px; }
+
+.task-card {
+  background: white;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+.task-meta { font-size: 12px; color: #666; margin-top: 4px; }
+.task-actions { display: flex; gap: 6px; margin-top: 8px; }
+.task-actions form { display: inline; }
+.task-actions button { margin-top: 0; padding: 5px 10px; font-size: 12px; }
+
+/* --- Members page --- */
+.member-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 500px;
+}
+.member-row form { margin-left: auto; }

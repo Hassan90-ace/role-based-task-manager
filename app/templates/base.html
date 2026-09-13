@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TaskFlow</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- This links our CSS file so every page below shares the same look -->
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="/projects" class="brand">TaskFlow</a>
+    {% if user %}
+      <span class="nav-user">Hi, {{ user.name }}</span>
+      <a href="/logout">Log out</a>
+    {% else %}
+      <a href="/login">Log in</a>
+      <a href="/register">Sign up</a>
+    {% endif %}
+  </nav>
+
+  <main class="container">
+    <!-- 'block content' is filled in by each page that extends this file -->
+    {% block content %}{% endblock %}
+  </main>
+
+</body>
+</html>

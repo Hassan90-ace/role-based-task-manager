@@ -1,0 +1,32 @@
+<div class="task-card">
+  <strong>{{ task.title }}</strong>
+  {% if task.description %}<p>{{ task.description }}</p>{% endif %}
+
+  <p class="task-meta">
+    {% if task.assignee %}👤 {{ task.assignee.name }}{% else %}Unassigned{% endif %}
+    {% if task.due_date %} · Due {{ task.due_date.strftime("%b %d") }}{% endif %}
+  </p>
+
+  <div class="task-actions">
+    {% if task.status.value == "todo" %}
+      <form method="post" action="/projects/{{ project.id }}/tasks/{{ task.id }}/status">
+        <input type="hidden" name="new_status" value="in_progress" />
+        <button type="submit">Start →</button>
+      </form>
+    {% elif task.status.value == "in_progress" %}
+      <form method="post" action="/projects/{{ project.id }}/tasks/{{ task.id }}/status">
+        <input type="hidden" name="new_status" value="todo" />
+        <button type="submit">← Back</button>
+      </form>
+      <form method="post" action="/projects/{{ project.id }}/tasks/{{ task.id }}/status">
+        <input type="hidden" name="new_status" value="done" />
+        <button type="submit">Done →</button>
+      </form>
+    {% elif task.status.value == "done" %}
+      <form method="post" action="/projects/{{ project.id }}/tasks/{{ task.id }}/status">
+        <input type="hidden" name="new_status" value="in_progress" />
+        <button type="submit">↺ Reopen</button>
+      </form>
+    {% endif %}
+  </div>
+</div>
